@@ -43,6 +43,7 @@ $route['index']="login_controller";
 $route['login']="login_controller/login";
 $route['dashboard']="dashboard_controller";
 $route['sign_up']="signup_controller/index";
+$route['get_user']="users_controller/get_user";
 $route['create_new_user']='signup_controller/create_new_user';
 $route['404_override'] = '';
 

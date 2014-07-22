@@ -17,6 +17,20 @@ class Users_model extends CI_Model{
 		}
 	
 	}
+	public function get_all_users()
+	{
+		$q = $this->db->select('id, first_name, last_name')
+					  ->get('users');
+		return $q->result_array();
+	
+	}
+	public function get_user_by_id($id)
+	{
+		$q = $this->db->select('first_name,last_name')
+					  ->where('id',$id)
+					  ->get('users');
+		return $q->result_array();
+	}
 }
 
 ?>

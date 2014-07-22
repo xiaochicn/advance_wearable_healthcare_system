@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Dashboard_controller extends CI_Controller {
+class Users_controller extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -22,18 +22,20 @@ class Dashboard_controller extends CI_Controller {
 		parent::__construct();
 		$this->load->helper('url');
 		$this->load->model('users_model');
-		
+	
 	}
-	public function index()
+	public function get_user()
 	{
 		$data['users'] = $this->users_model->get_all_users();
-		$data['user_id'] = "dashboard";
+		$uid = $_GET['uid'];
+		$data['user_id'] = $uid;
+		$data['current_user'] = $this->users_model->get_user_by_id($uid);
 		$this->load->view('template/header');
 		$this->load->view('template/side_bar',$data);
-		$this->load->view('dashboard/index');
+		$this->load->view('users/index');
 		$this->load->view('template/inline_script');
+		$this->load->view('users/inline_script');
 		$this->load->view('template/footer');
-		
 	}
 }
 

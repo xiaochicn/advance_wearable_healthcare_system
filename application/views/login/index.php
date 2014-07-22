@@ -4,11 +4,11 @@
     <title>Signin Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-	<link href="<?=base_url('../../../assets/css/bootstrap.min.css')?>" rel="stylesheet">
-	<link href="<?=base_url('../../../assets/css/cmpe295B.css')?>" rel="stylesheet">
+	<link href="<?=base_url('assets/css/bootstrap.min.css')?>" rel="stylesheet">
+	<link href="<?=base_url('assets/css/cmpe295B.css')?>" rel="stylesheet">
   </head>
 
-  <body>
+  <body class="login_body">
 
     <div class="container">
 
